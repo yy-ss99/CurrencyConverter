@@ -17,10 +17,10 @@ final class AppStateStore {
 
     // 항상 AppState는 유일해야함
     private func fetchOrCreateState() -> AppState {
-        let req: NSFetchRequest<AppState> = AppState.fetchRequest()
-        req.fetchLimit = 1
+        let request: NSFetchRequest<AppState> = AppState.fetchRequest()
+        request.fetchLimit = 1
 
-        if let state = try? context.fetch(req).first {
+        if let state = try? context.fetch(request).first {
             return state
         } else {
             return AppState(context: context)
@@ -35,10 +35,10 @@ final class AppStateStore {
     }
 
     func loadLastState() -> (screen: LastScreen, selectedCurrency: String?) {
-        let req: NSFetchRequest<AppState> = AppState.fetchRequest()
-        req.fetchLimit = 1
+        let request: NSFetchRequest<AppState> = AppState.fetchRequest()
+        request.fetchLimit = 1
 
-        guard let state = try? context.fetch(req).first,
+        guard let state = try? context.fetch(request).first,
               let raw = state.lastScreen,
               let screen = LastScreen(rawValue: raw) else {
 
