@@ -223,6 +223,14 @@ let context = persistentContainer.newBackgroundContext()
 - `Context`는 자신이 생성된 `Queue`에서만 사용 가능
 - 데이터 작업은 `Background`, `UI`는 `Main`에서 처리 강제해야함
 
+# 💦 메모리 leak 확인
+| debugSwift | debugSwift | 
+|---|---|
+| <img width="344" height="710" alt="image" src="https://github.com/user-attachments/assets/02f92a30-3576-4183-a81c-9c7128f7838d" /> | <img width="343" height="711" alt="image" src="https://github.com/user-attachments/assets/1e1bf52d-1a23-45d5-890a-f28209ebfcdd" /> | 
+- swift instrument leak
+<img width="788" height="160" alt="image" src="https://github.com/user-attachments/assets/36f70e1d-ca4a-4d2f-8548-1e111e8bfe06" />
+
+
 
 # 📚 What I Learned
 - MVVM의 기본 구조와 구현을 배웠습니다.
